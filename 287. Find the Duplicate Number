@@ -1,0 +1,33 @@
+int findDuplicate(vector<int>& nums) {
+
+
+        // method 1---------Using sorting
+        // int i =0;
+        // sort(nums.begin(),nums.end());
+        // for(i =0;i<nums.size();i++){
+        //     if(nums[i]==nums[i+1]){
+        //         break;
+        //     }
+        // }
+        // return nums[i];
+
+        //method 2 
+        // while(nums[0]!=nums[nums[0]]){
+        //     swap(nums[0],nums[nums[0]]);
+
+        // }
+        // return nums[0];
+
+
+        // method 3 -- using map
+        int i =0;
+        unordered_map<int,int> mp;
+        for( i =0;i<nums.size();i++){
+            if(mp[nums[i]]>0){
+                break;
+            }
+            mp[nums[i]]++;
+        }
+        return nums[i];
+        
+    }

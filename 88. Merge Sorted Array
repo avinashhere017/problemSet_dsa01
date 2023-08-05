@@ -1,0 +1,41 @@
+void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+
+
+        // // method 1 using extra space 
+
+        // vector<int> v;
+        // int left =0;
+        // int right=0;
+
+        // while(left<m && right<n){
+        //     if(nums1[left]<nums2[right]){
+        //         v.push_back(nums1[left]);
+        //         left++;
+        //     }else{
+        //         v.push_back(nums2[right]);
+        //         right++;
+        //     }
+        // }
+        // // int i=0;
+        // while(left<m){
+        //     v.push_back(nums1[left]);
+        //     left++;
+        // }
+        // while(right<n){
+        //     v.push_back(nums2[right]);
+        //     right++;
+        // }
+        // for(int i =0;i<m+n;i++){
+        //     nums1[i]=v[i];
+        // }
+
+
+        // method 2 -- 
+//         Traverse through nums2 and append its elements to the end of nums1 starting from index m.
+// Sort the entire nums1 array using sort() function.
+        for (int j = 0, i = m; j<n; j++){
+            nums1[i] = nums2[j];
+            i++;
+        }
+        sort(nums1.begin(),nums1.end());
+    }

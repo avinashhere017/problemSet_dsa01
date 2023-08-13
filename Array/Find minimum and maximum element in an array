@@ -1,0 +1,23 @@
+pair<long long, long long> getMinMax(long long a[], int n) {
+    // method 1
+    // sort(a,a+n);
+    
+    // method 2
+    int maxi = INT_MIN;
+    int mini = INT_MAX;
+    for(int i =0;i<n;i++){
+        if(a[i]>maxi){
+            maxi=a[i];
+            
+        }
+        if(a[i]<mini){
+            mini=a[i];
+        }
+        
+    }
+    
+    pair<long long, long long> minMax = make_pair(mini,maxi);
+    
+    return minMax;
+    
+}

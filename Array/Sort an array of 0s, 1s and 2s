@@ -1,0 +1,56 @@
+  public:
+    void sort012(int a[], int n)
+    {
+        // // code here 
+        // // method 1  sort method
+        // sort(a,a+n);
+        
+        
+        
+    //     //method 2 using counting method
+    //     //count 0 ,1 and 2 and filling it into array
+        
+    //     int zero =0,one=0,two=0;
+    //     for(int i =0;i<n;i++){
+    //         if(a[i]==0){
+    //             zero++;
+    //         }else if(a[i]==1){
+    //             one++;
+    //         }
+    //         else{
+    //             two++;
+    //         }
+    //     }
+    //     int i =0;
+    //     while(zero--){
+    //         a[i]=0;
+    //         i++;
+    //     }
+    //     while(one--){
+    //         a[i]=1;
+    //         i++;
+    //     }
+    //     while(two--){
+    //         a[i]=2;
+    //         i++;
+    //     }
+    
+    //method 3 using three pointer
+    int l =0;
+    int mid=0 ;
+    int h=n-1;
+    
+    while(mid<=h){
+        if(a[mid]==0){
+            swap(a[l],a[mid]);
+            l++;
+            mid++;
+        }else if(a[mid]==1){
+            mid++;
+        }
+        else{
+            swap(a[mid],a[h]);
+            h--;
+        }
+    }
+    }

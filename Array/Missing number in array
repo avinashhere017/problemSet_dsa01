@@ -1,0 +1,34 @@
+int missingNumber(vector<int>& array, int n) {
+        // Your code goes here
+        
+        // // sort first
+        // sort(array.begin(),array.end());
+        
+        
+        // for(int i=0;i<n;i++){
+        //     if(array[i]-i!=1){
+        //       return i+1;
+        //     }
+        // }
+        
+        // method 2 
+        
+        // int sum =0;
+        // for(int i =0;i<n;i++){
+        //     sum=sum+array[i];
+        // }
+        // int s = n*(n+1)/2;
+        // return (s-sum);g
+        
+        // using xor
+         int x1 = 0;
+    // For xor of all the elements from 0 to n
+
+    // 2. using xor method : xor of the givern array with 1-n
+    int x2 = 0;
+    for (int i = 0; i < n-1; i++)
+        x1 = x1 ^ array[i];
+    for (int i = 1; i <= n; i++)
+        x2 = x2 ^ i;
+    return (x1 ^ x2);
+    }

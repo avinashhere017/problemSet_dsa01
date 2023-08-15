@@ -1,0 +1,6 @@
+    void deleteNode(ListNode* node) {
+        // you had no access to the left of the linked list but can access the right part of the node 
+        node->val=node->next->val;
+        node->next=node->next->next;
+        
+    }

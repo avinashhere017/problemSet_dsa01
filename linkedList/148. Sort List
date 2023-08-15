@@ -1,0 +1,21 @@
+ void linkedListToVector(ListNode * head,vector<int> &vec){
+            ListNode* curr=head;
+            while(curr){
+                vec.push_back(curr->val);
+                curr=curr->next;
+            }
+    }
+    void vectorToLinkedList(ListNode * head,vector<int> &vec){
+             ListNode* curr=head;
+             for(int val :vec){
+                 curr->val=val;
+                 curr=curr->next;
+             }
+    }
+    ListNode* sortList(ListNode* head) {
+        vector<int> vec;
+        linkedListToVector(head,vec);
+        sort(vec.begin(),vec.end());
+        vectorToLinkedList(head,vec);
+        return head;
+    }

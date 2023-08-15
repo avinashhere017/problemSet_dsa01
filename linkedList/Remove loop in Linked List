@@ -1,0 +1,38 @@
+//Function to remove a loop in the linked list.
+    void removeLoop(Node* head)
+    {   // code here
+        // just remove the loop without losing any nodes
+        
+        Node* slow=head;
+        Node* fast=head;
+        
+        while(fast && fast->next){
+            fast=fast->next->next;
+            slow=slow->next;
+            
+            if(slow==fast){
+                slow=head;
+                break;
+            }
+            if(fast==NULL || fast->next==NULL){
+                return ;
+            }
+        }
+    
+        while(slow!=fast){
+            
+            slow=slow->next;
+            fast=fast->next;
+           
+        }
+        // return slow->data;
+        
+        // fast->next=NULL;
+        Node* loopstart=fast;
+        
+        while(loopstart->next!=fast && loopstart->next!=slow){
+            loopstart=loopstart->next;
+        }
+        loopstart->next=NULL;
+        
+    }

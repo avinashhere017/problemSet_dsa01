@@ -1,0 +1,32 @@
+class Solution {
+public:
+    ListNode *detectCycle(ListNode *head) {
+          ListNode* slow=head;
+        ListNode* fast=head;
+            if(fast==NULL || fast->next==NULL){
+                // cout<<"no cycle";
+                return NULL; }
+       
+        
+        while(fast && fast->next){
+            fast=fast->next->next;
+            slow=slow->next;
+            
+            if(slow==fast){
+                slow=head;
+                break;
+            }
+            if(fast==NULL || fast->next==NULL){
+                // cout<<"no cycle";
+                return NULL;   }      
+               }
+        
+       
+        while(slow!=fast){
+            fast=fast->next;
+            slow=slow->next;
+           
+        }
+        return slow;
+    }
+};

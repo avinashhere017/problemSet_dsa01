@@ -1,0 +1,25 @@
+vector<int> getFrequencies(vector<int>& v) {
+    // Write Your Code Here
+
+
+     map<int,int> mp;
+     for(int i =0;i<v.size();i++){
+         mp[v[i]]++;
+     }
+
+    int maxi=INT_MIN;
+    int mini =INT_MAX;
+     vector<int> ans(2);
+     for(auto it:mp){
+         if(it.second > maxi){
+             ans[0]=it.first;
+             maxi=it.second;
+         }
+         if(it.second < mini){
+             ans[1]=it.first;
+             mini=it.second;
+         }
+         
+     }
+    return ans;
+}

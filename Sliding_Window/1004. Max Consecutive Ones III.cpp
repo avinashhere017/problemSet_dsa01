@@ -1,3 +1,8 @@
+
+
+Explanation --------- https://leetcode.com/problems/max-consecutive-ones-iii/solutions/692111/simple-c-explanation-for-easy-understanding-o-n-time-and-o-1-space/
+
+
 class Solution {
 public:
     int longestOnes(vector<int>& nums, int k) {
